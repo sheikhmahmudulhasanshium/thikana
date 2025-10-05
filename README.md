@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Thikana
+
+> Guardians of your real estate legacy.
+
+Thikana (ঠিকানা) is a Bengali word for "address" or "home"—a place of belonging, stability, and identity.
+
+In a world where property management is fragmented and disorganized, Thikana provides a central, trusted system to bring structure, clarity, and trust to real estate ownership. It is designed for long-term reliability, serving not just as a tool, but as a digital guardian for your most valuable assets.
 
 ## Getting Started
 
-First, run the development server:
+To run the frontend application locally, follow these steps.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**Prerequisites:**
+*   [Node.js](https://nodejs.org/) (LTS version recommended)
+*   [pnpm](https://pnpm.io/installation) package manager
+
+**Installation & Running the Development Server:**
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/<your-username>/thikana.git
+    cd thikana
+    ```
+
+2.  **Navigate to the frontend directory:**
+    ```powershell
+    cd thikana-frontend
+    ```
+
+3.  **Install dependencies:**
+    ```powershell
+    pnpm install
+    ```
+
+4.  **Run the frontend development server:**
+    ```powershell
+    pnpm run dev
+    ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Core Principles
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project is guided by four core pillars derived from its brand identity:
 
-## Learn More
+*   **Trust:** The system must be secure, reliable, and transparent.
+*   **Continuity:** Features are designed for long-term use, data preservation, and legacy planning.
+*   **Responsibility:** The tool empowers users with control and care; it does not "automate away" good judgment.
+*   **Clarity:** The interface and data presentation are designed to be intuitive and unambiguous.
 
-To learn more about Next.js, take a look at the following resources:
+## Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*   **Frontend (`thikana-frontend`):** Next.js, TypeScript, Tailwind CSS, Shadcn/UI, Framer Motion
+*   **Backend (`thikana-backend`):** NestJS, TypeScript, Passport.js, Swagger
+*   **Database:** TBD (Utilizing a service with a generous free tier)
+*   **Deployment:** Vercel
