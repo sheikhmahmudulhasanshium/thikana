@@ -2,7 +2,7 @@
 
 > Guardians of your real estate legacy.
 
-Thikana (ঠিকানা) is a Bengali word for "address" or "home"—a place of belonging, stability, and identity.
+Thikana (ঠিকানা/ठीकানা) is a Bengali word for "address" or "home"—a place of belonging, stability, and identity.
 
 In a world where property management is fragmented and disorganized, Thikana provides a central, trusted system to bring structure, clarity, and trust to real estate ownership. It is designed for long-term reliability, serving not just as a tool, but as a digital guardian for your most valuable assets.
 
@@ -18,7 +18,7 @@ To run the frontend application locally, follow these steps.
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/<your-username>/thikana.git
+    git clone https://github.com/sheikhmahmudulhasanshium/thikana.git
     cd thikana
     ```
 
@@ -52,5 +52,4 @@ This project is guided by four core pillars derived from its brand identity:
 
 *   **Frontend (`thikana-frontend`):** Next.js, TypeScript, Tailwind CSS, Shadcn/UI, Framer Motion
 *   **Backend (`thikana-backend`):** NestJS, TypeScript, Passport.js, Swagger
-*   **Database:** TBD (Utilizing a service with a generous free tier)
 *   **Deployment:** Vercel

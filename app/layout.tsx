@@ -1,45 +1,50 @@
-// src/app/layout.tsx
-import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import BasicPageProvider from "@/components/common/providers/basic-page-provider";
 
-import { cn } from "@/lib/utils";
-import { ThemeProvider } from "@/components/common/providers/theme-provider";
-
-const geistSans = Geist({
-  variable: "--font-sans", // Use --font-sans for shadcn compatibility
-  subsets: ["latin"],
-});
-
-// We are using a single font, so geistMono is not needed unless you have specific use cases for it.
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
-
-// This is the root metadata for the entire application.
+// This is the root metadata for the ENTIRE application.
+// It is a separate export and does not clutter the RootLayout component logic.
+// This is a SERVER-ONLY feature.
 export const metadata: Metadata = {
   title: {
     default: "Thikana",
-    template: "%s | Thikana", // For page-specific titles, e.g., "Dashboard | Thikana"
+    template: "%s | Thikana", // For page-specific titles, e.g., "Home | Thikana"
   },
   description:
     "Thikana is a trusted property management system that brings clarity, structure, and security to real estate ownership, acting as the guardian of your real estate legacy.",
-  // For better social sharing previews
   openGraph: {
     title: "Thikana",
     description: "Guardians of your real estate legacy.",
     siteName: "Thikana",
     type: "website",
     locale: "en_US",
+    // url: 'https://your-domain.com', // Add your production URL here
+    // images: ['https://your-domain.com/og-image.png'], // Add a default social preview image
   },
   twitter: {
     card: "summary_large_image",
     title: "Thikana",
     description: "Guardians of your real estate legacy.",
+    // images: ['https://your-domain.com/twitter-image.png'], // Add a default Twitter image
+  },
+  icons: {
+    icon: "/favicon.ico", // Place your favicon in the public directory
+    // shortcut: '/favicon-16x16.png',
+    // apple: '/apple-touch-icon.png',
   },
 };
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  themeColor: '#ffffff', // Light mode theme color
+  colorScheme: 'light dark',
+};
+
+
+// This RootLayout is a Server Component. Its only job is to provide the root HTML
+// structure and delegate the rest of the setup to the BasicPageProvider.
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -47,20 +52,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          geistSans.variable
-        )}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+      <body className="">
+        <BasicPageProvider>{children}</BasicPageProvider>
       </body>
     </html>
   );
